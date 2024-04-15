@@ -1,15 +1,27 @@
 import React from "react";
 import blogData from "../data/blog";
-
+import Header from "./Header";
+import About from "./About";
+import ArticleList from "./ArticleList";
 console.log(blogData);
 
-function App() {
+
+  const posts = [
+    { title: "Title 1", date: "April 14, 2024", preview: "Preview of article 1" },
+    { title: "Title 2", date: "April 15, 2024", preview: "Preview of article 2" },
+  ]
+
+  const App = () => {
   return (
     <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+      <Header name="Your Blog Name Here"/>
+      <ArticleList posts={posts} />
+      <About
+        image="https://via.placeholder.com/215" 
+        about="Blog description." 
+      />
     </div>
   );
-}
+};
 
 export default App;
